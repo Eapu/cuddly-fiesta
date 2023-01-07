@@ -1,16 +1,30 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
 import { Canvas } from '@react-three/fiber'
 import { Sky } from '@react-three/drei'
+import { Physics } from '@react-three/cannon'
+import { Ground } from './components/Ground'
+import { FirstPointView } from './components/FirstPointView'
+import { Player } from './components/Player'
+import { Cubes } from './components/Cubes'
+import { TextureSelect } from './components/TextureSelect'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <Canvas>
-      <Sky sunPosition={[100, 100, 20]}/>
-      <ambientLight intensity={0.5} />
-    </Canvas>
+    <>
+      <Canvas>
+        <Sky sunPosition={[100, 100, 20]}/>
+        <ambientLight intensity={0.5} />
+        <FirstPointView />
+        <Physics>
+          <Cubes />
+          <Player />
+          <Ground />
+        </Physics>
+      </Canvas>
+      <TextureSelect />
+      <div className="pointer">+</div>
+    </>
   )
 }
 
