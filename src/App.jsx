@@ -7,11 +7,13 @@ import { FirstPointView } from './components/FirstPointView'
 import { Player } from './components/Player'
 import { Cubes } from './components/Cubes'
 import { TextureSelect } from './components/TextureSelect'
+import { Menu } from './components/Menu'
 
 function App() {
 
   return (
     <>
+      <Menu />
       <Canvas>
         <Sky sunPosition={[100, 100, 20]}/>
         <ambientLight intensity={0.5} />
@@ -23,6 +25,7 @@ function App() {
         </Physics>
       </Canvas>
       <TextureSelect />
+
       <div className="pointer">+</div>
     </>
   )
