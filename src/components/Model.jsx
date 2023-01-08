@@ -7,8 +7,8 @@ import { MeshBasicMaterial } from "three";
 import { useState } from 'react'
 
 export default function Model(props) {
-
-  const { nodes, materials } = useGLTF("https://elenacube.s3.eu-west-1.amazonaws.com/models/virus5.body.gltf");
+//https://elenacube.s3.eu-west-1.amazonaws.com/models/virus5.body.gltf
+  const { nodes, materials } = useGLTF("src/models/virus5.body.gltf");
   const material = new MeshBasicMaterial({ color: "red" });
   const [override, setOverride] = useState(false);
 
