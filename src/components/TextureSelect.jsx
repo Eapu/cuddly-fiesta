@@ -47,7 +47,7 @@ export const TextureSelect = () => {
   }, [dirt, grass, glass, wood, log])
 
   return (
-    <div className={`texture-selector ${visible ? '' : 'hidden'}`}>
+    <div className={'texture-selector'}>
       {
         Object
           .entries(images)
