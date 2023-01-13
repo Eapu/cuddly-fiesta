@@ -10,8 +10,7 @@ const ACTION_KEYBOARD_MAP = {
   'Digit2':'grass',
   'Digit3':'glass',
   'Digit4':'wood',
-  'Digit4':'log'
-
+  'Digit4':'log',
 }
 export const useKeyboard = () => {
   const [actions, setActions] = useState({

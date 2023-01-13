@@ -5,12 +5,15 @@ import { useLoader } from "@react-three/fiber";
 import { useFrame } from '@react-three/fiber';
 import { MeshBasicMaterial } from "three";
 import { useState } from 'react'
+import { useStore } from '../hooks/useStore.js'
 
 export default function Model(props) {
   const { nodes, materials } = useGLTF("https://elenacube.s3.eu-west-1.amazonaws.com/models/virus5.body.gltf");
   const material = new MeshBasicMaterial({ color: "red" });
-  const [override, setOverride] = useState(false);
+  //const [override, setOverride] = useState(false);
+  const [override, setOverride] = useStore(state => [state.override, state.setOverride])
 
+console.log(override,'overiride')
   return (
     <group {...props} dispose={null}>
       <group position={[-10.04, 1, 0.5]} scale={0.61}>

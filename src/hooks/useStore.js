@@ -6,6 +6,8 @@ const setLocalStorage = (key, value) => window.localStorage.setItem(key, JSON.st
 
 export const useStore = create(set => ({
   texture: 'dirt',
+  override: false,
+  spheres:[],
   cubes: getLocalStorage('cubes') || [],
   addCube: (x, y, z) => {
     set(prev => ({
@@ -24,6 +26,25 @@ export const useStore = create(set => ({
       })
     }))
   },
+  addSphere: (x, y, z) => {
+    set(prev => ({
+      spheres: [...prev.spheres, {
+        key: nanoid(),
+        texture: prev.texture,
+        pos: [x, y, z]
+      }]
+    }))
+  },
+  removeSphere: (x, y, z) => {
+    set((prev) => ({
+      spheres: prev.spheres.filter(sphere => {
+        const[X, Y, Z] = sphere.pos
+        return X !== x || Y !== y || Z !== z
+      })
+    }))
+  },
+  setOverride: () => set((state) => ({ override: !state.override })),
+
   setTexture: (texture) => {
     set(() => ({ texture }))
   },

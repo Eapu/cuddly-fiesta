@@ -13,6 +13,7 @@ import { Suspense } from 'react'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { useBox } from '@react-three/cannon'
 import * as textures from './images/textures.js'
+import { Spheres } from './components/Spheres'
 
 function App() {
   function Box() {
@@ -39,6 +40,7 @@ function App() {
         <Physics>
           <Model />
           <Box />
+          <Spheres />
           <Cubes />
           <Player />
           <Ground />
