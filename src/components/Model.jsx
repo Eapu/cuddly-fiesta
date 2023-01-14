@@ -16,7 +16,7 @@ export default function Model(props) {
 console.log(override,'overiride')
   return (
     <group {...props} dispose={null}>
-      <group position={[-10.04, 1, 0.5]} scale={0.61}>
+      <group position={[7, 1, 0.2]} scale={0.2}>
         <mesh onClick={() => setOverride((o) => !o)}
           castShadow
           receiveShadow

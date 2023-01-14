@@ -21,7 +21,7 @@ export const Player = () => {
   const [ref, api] = useSphere(() => ({
     mass:1,
     type:'Dynamic',
-    position:[0, 0.5, 0]
+    position:[10, 0.5, 4]
   }))
 
   const pos = useRef([0, 0, 0])

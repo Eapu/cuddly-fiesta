@@ -18,20 +18,18 @@ export function Ground (){
   
   const handleClickGround = event => {
     event.stopPropagation()
-    console.log(event.point,'fgb')
-    console.log(event.KeyCode,'KeyCode')
-console.log(override,'override')
     const [x, y, z ] = Object.values(event.point)
       .map(n => Math.ceil(n))
+
       if(override === true){
         addSphere(x, y, z)
-      }
-    
+      } else {
       addCube(x, y, z)
-
+    }
   }
   return(
     <mesh
+      receiveShadow
       onClick={handleClickGround}
       ref={ref}
     >

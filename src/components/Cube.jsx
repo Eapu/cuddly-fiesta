@@ -15,7 +15,7 @@ export const Cube = ({ id, position, texture }) => {
   const activeTexture = textures[texture + 'Texture']
 
   return (
-    <mesh
+    <mesh castShadow
       onPointerMove={(e) => {
         e.stopPropagation()
         setIsHovered(true)
@@ -26,8 +26,10 @@ export const Cube = ({ id, position, texture }) => {
       }}
       onClick={(e) => {
         e.stopPropagation()
-        const clickedFace = Math.floor(e.faceIndex / 2)
+        const clickedFace = e
         const { x, y, z } = ref.current.position
+        console.log(clickedFace,'clickedFace')
+
         if (e.altKey) {
           removeCube(x,y,z)
           return
