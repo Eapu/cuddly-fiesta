@@ -15,7 +15,7 @@ export const Cube = ({ id, position, texture }) => {
   const activeTexture = textures[texture + 'Texture']
 
   return (
-    <mesh
+    <mesh castShadow
       onPointerMove={(e) => {
         e.stopPropagation()
         setIsHovered(true)
