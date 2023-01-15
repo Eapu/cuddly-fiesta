@@ -3,7 +3,7 @@ import { useGLTF, useAnimations } from "@react-three/drei";
 
 export default function Model2(props) {
   const group = useRef();
-  const { nodes, materials, animations } = useGLTF("src/models/palmeras2.glb");
+  const { nodes, materials, animations } = useGLTF("https://elenacube.s3.eu-west-1.amazonaws.com/palmeras2.glb");
   const { actions } = useAnimations(animations, group)
   const [isClicked, setIsClicked] = useState(false)
 console.log(actions,'actions')
