@@ -15,7 +15,7 @@ export const Sphere = ({ id, position, texture }) => {
   const activeTexture = textures[texture + 'Texture']
 
   return (
-    <mesh scale={0.25} castShadow
+    <mesh scale={0.3} castShadow
       onPointerMove={(e) => {
         e.stopPropagation()
         setIsHovered(true)
@@ -35,20 +35,17 @@ export const Sphere = ({ id, position, texture }) => {
           console.log('pressedkey')
           removeSphere(x,y,z)
           return
-        } else if (clickedFace >0 && clickedFace < 100){
+        } else if (clickedFace >0 && clickedFace < 300){
           addSphere(x , y+1, z)
           return
-        } else if (clickedFace > 100 && clickedFace < 300){
-          addSphere(x+1, y+1, z)
+        } else if (clickedFace > 300 && clickedFace < 550){
+          addSphere(x-1, y, z)
           return
-        } else if (clickedFace > 300 && clickedFace < 1000){
-          addSphere(x - 1, y, z)
-          return
-        }
-        else if (clickedFace >1000){
-          addSphere(x, y, z-1)
+        } else if (clickedFace > 550 && clickedFace < 1000){
+          addSphere(x +1, y, z)
           return
         }
+
       }}
       ref={ref}
     >

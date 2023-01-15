@@ -9,6 +9,9 @@ import { Cubes } from './components/Cubes'
 import { TextureSelect } from './components/TextureSelect'
 import { Menu } from './components/Menu'
 import Model from './components/Model'
+import Model2 from './components/Model2'
+import Model4 from './components/Model4'
+
 import { Suspense } from 'react'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { useBox } from '@react-three/cannon'
@@ -31,6 +34,7 @@ function App() {
       </mesh>
     )
   }
+
   return (
     <>
       <Menu />
@@ -65,6 +69,7 @@ function App() {
             <shadowMaterial attach="material" opacity={0.3} />
           </Plane>
           <Model />
+          <Model2 />
           <Box />
           <Spheres />
           <Cubes />
