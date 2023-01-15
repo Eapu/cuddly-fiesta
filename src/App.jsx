@@ -10,6 +10,7 @@ import { TextureSelect } from './components/TextureSelect'
 import { Menu } from './components/Menu'
 import Model from './components/Model'
 import Model2 from './components/Model2'
+import Bee from './components/Bee'
 
 import { Suspense } from 'react'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
@@ -69,6 +70,8 @@ function App() {
           </Plane>
           <Model />
           <Model2 />
+          <Bee />
+
           <Box />
           <Spheres />
           <Cubes />
